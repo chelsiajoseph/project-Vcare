@@ -1,0 +1,1046 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Index.php\par
+\par
+<?php\par
+$conn=@mysql_connect("localhost","root","") or die('unable to connect');\par
+//echo "connected"; \par
+@mysql_select_db("dbayurr",$conn) or die('could not find db');\par
+?>\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+\par
+<head>\par
+\tab <title>VCare</title>\par
+\tab <!-- Meta Tags -->\par
+\tab <meta name="viewport" content="width=device-width, initial-scale=1">\par
+\tab <meta charset="utf-8">\par
+\tab <meta name="keywords" content="Gleam Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,\par
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />\par
+\tab <script>\par
+\tab\tab addEventListener("load", function () \{\par
+\tab\tab\tab setTimeout(hideURLbar, 0);\par
+\tab\tab\}, false);\par
+\par
+\tab\tab function hideURLbar() \{\par
+\tab\tab\tab window.scrollTo(0, 1);\par
+\tab\tab\}\par
+\tab </script>\par
+\tab <!-- //Meta Tags -->\par
+\tab <!-- Style-sheets -->\par
+\tab <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />\par
+\tab <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />\par
+\tab <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />\par
+\tab <link rel="stylesheet" href="css/lightbox.css">\par
+\tab <link href="css/fontawesome-all.css" rel="stylesheet">\par
+\tab <!--// Style-sheets -->\par
+\tab <!--web-fonts-->\par
+\tab <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">\par
+\tab <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">\par
+\tab <!--//web-fonts-->\par
+\tab <style>\par
+\tab input[type=text], input[type=password],input[type=email] \{\par
+    width:60%;\par
+height:50px;\par
+border-radius:15px 0 15px 0;\par
+border:2px solid #fff;\par
+margin-bottom:15px;\par
+background: transparent;\par
+color:#fff;\par
+\}\par
+\par
+/* Set a style for all buttons */\par
+button \{\par
+display:inline-block;\par
+height:40px;\par
+width:150px;\par
+line-height:40px;\par
+overflow:hidden;\par
+position:relative;\par
+text-align:center;\par
+background:\tab #9932CC;\par
+border-radius:25px;\par
+color:#fff;\par
+\par
+margin-top:20px;\par
+<!--margin-top:20px;-->\par
+\}\par
+button-text\{\par
+display:block;\par
+height:100%;\par
+position:relative;\par
+top:0;\par
+width:90%;\par
+\}\par
+button:hover \{\par
+    opacity: 0.8;\par
+\}\par
+\par
+/* Extra styles for the cancel button */\par
+.cancelbtn \{\par
+    width: auto;\par
+    padding: 10px 18px;\par
+    background-color: #f44336;\par
+\}\par
+\par
+/* Center the image and position the close button */\par
+.imgcontainer,.imgcontainer1 \{\par
+    width:50px;\par
+height:50px;\par
+border-radius:50%;\par
+background:white;\par
+position:absolute;\par
+top:-5%;\par
+left:45%;\par
+  \par
+\}\par
+\par
+img.avatar \{\par
+    width:100%;\par
+padding:5px; \par
+\}\par
+\par
+.container,.container1 \{\par
+    padding: 16px;\par
+\}\par
+\par
+span.psw \{\par
+    float: center;\par
+    padding-top: 16px;\par
+\tab color:#fff;\par
+\tab text-decoration:bold;\par
+\}\par
+\par
+/* The Modal (background) */\par
+.modal,.modal1 \{\par
+    display: none; /* Hidden by default */\par
+    position: fixed; /* Stay in place */\par
+    z-index: 1; /* Sit on top */\par
+    left: 0;\par
+    top: 0;\par
+    width: 100%; /* Full width */\par
+    height: 100%; /* Full height */\par
+    overflow: auto; /* Enable scroll if needed */\par
+    background-color: rgb(0,0,0); /* Fallback color */\par
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\par
+    padding-top: 60px;\par
+\}\par
+\par
+/* Modal Content/Box */\par
+<!--.modal-content \{\par
+    background-color: #fefefe;\par
+    margin: 5px auto; /* 15% from the top and centered */\par
+    border: 1px solid #888;\par
+    width: 80%; /* Could be more or less, depending on screen size */\par
+\}-->\par
+.modal-content,.modal-content1\{\par
+background:rgba(0,0,0,0.4);\par
+\tab text-align:center;\par
+\tab\par
+\tab border:3px solid #fff;\par
+\tab -webkit-border-radius:70px 0 70px 0;\par
+\tab -moz-border-radius:70px 0 70px 0;\par
+\tab border-radius:70px 0 70px 0;\par
+\par
+\}\par
+.modal-content1,.modal-content label\{\par
+\par
+text-align:left;\par
+color:#fff;\par
+text-transform:uppercase;\par
+font-weight:bold;\par
+\}\par
+\par
+/* The Close Button (x) */\par
+.close \{\par
+    position: absolute;\par
+    left: 540px;\par
+    top: 0;\par
+    color: #000;\par
+    font-size: 35px;\par
+    font-weight: bold;\par
+\}\par
+.close\{\par
+color:white;\par
+\}\par
+.close:hover,\par
+.close:focus \{\par
+    color: red;\par
+    cursor: pointer;\par
+\}\par
+\par
+/* Add Zoom Animation */\par
+.animate \{\par
+    -webkit-animation: animatezoom 0.6s;\par
+    animation: animatezoom 0.6s\par
+\}\par
+\par
+@-webkit-keyframes animatezoom \{\par
+    from \{-webkit-transform: scale(0)\} \par
+    to \{-webkit-transform: scale(1)\}\par
+\}\par
+    \par
+@keyframes animatezoom \{\par
+    from \{transform: scale(0)\} \par
+    to \{transform: scale(1)\}\par
+\}\par
+\par
+/* Change styles for span and cancel button on extra small screens */\par
+@media screen and (max-width: 300px) \{\par
+    span.psw \{\par
+       display: block;\par
+       float: none;\par
+\tab    text-align:center-left;\par
+\tab   text-color:#fff;\par
+    \}\par
+   <!--.cancelbtn \{\par
+       width: 100%;\par
+    \}\par
+\tab .submit-btn\{\par
+\tab background:green;\par
+\tab\}-->\par
+\tab\par
+\}\par
+</style>\par
+</head>\par
+\par
+<body>\par
+\tab  <!--banner -->\par
+\tab <div class="top-bar_sub container-fluid p-3">\par
+\tab\tab <div class="row">\par
+\tab\tab\tab <div class="col-sm-8 top-mid">\par
+\tab\tab\tab\tab <p class="paragraph-agileinfo">\par
+\tab\tab\tab\tab\tab <i class="fas fa-map-marker-alt"></i> Thazhe chovva , kannur , Kerala </p>\par
+\tab\tab\tab\tab <p class="paragraph-agileinfo">\par
+\tab\tab\tab\tab\tab <i class="fas fa-phone"></i> +91-8281177379</p>\par
+\tab\tab\tab </div>\par
+\tab\tab\tab <div class="col-sm-4 log-icons text-right">\par
+ <?php \par
+if(isset($_GET['error']))\par
+\{\par
+\tab $error=$_GET['error'];\par
+\tab echo "<font color=red >".$error;\par
+\tab\par
+\}\par
+?>\par
+\tab\tab\tab\tab <!--<ul class="social_list1">\par
+\par
+\tab\tab\tab\tab\tab <li class="text-center">\par
+\tab\tab\tab\tab\tab\tab <a href="#" class="facebook1">\par
+\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-facebook-f"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab <li class="text-center mx-sm-3 mx-2">\par
+\tab\tab\tab\tab\tab\tab <a href="#" class="twitter2">\par
+\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-twitter"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab <li class="text-center">\par
+\tab\tab\tab\tab\tab\tab <a href="#" class="dribble3">\par
+\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-dribbble"></i>\par
+\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab </ul>-->\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </div>\par
+\tab <div class="banner" id="home">\par
+\tab\tab <!-- header -->\par
+\tab\tab <header>\par
+\tab\tab\tab <nav class="navbar navbar-expand-lg navbar-light bg-light top-header">\par
+\tab\tab\tab\tab <h1 class="logo">\par
+\tab\tab\tab\tab\tab <a class="navbar-brand" href="index.html">\par
+\tab\tab\tab\tab\tab\tab <i class="fab fa-viadeo"></i>VCare</a>\par
+\tab\tab\tab\tab </h1>\par
+\tab\tab\tab\tab <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"\par
+\tab\tab\tab\tab     aria-expanded="false" aria-label="Toggle navigation">\par
+\tab\tab\tab\tab\tab <span class="navbar-toggler-icon"></span>\par
+\tab\tab\tab\tab </button>\par
+\par
+\tab\tab\tab\tab <div class="collapse navbar-collapse" id="navbarSupportedContent">\par
+\tab\tab\tab\tab\tab <ul class="navbar-nav ml-auto">\par
+\tab\tab\tab\tab\tab\tab <li class="nav-item active">\par
+\tab\tab\tab\tab\tab\tab\tab <a class="nav-link ml-lg-0" href="index.html">Home\par
+\tab\tab\tab\tab\tab\tab\tab\tab <span class="sr-only">(current)</span>\par
+\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab <li class="nav-item">\par
+\tab\tab\tab\tab\tab\tab\tab <a class="nav-link scroll" href="#about">About</a>\par
+\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab <li class="nav-item">\par
+\tab\tab\tab\tab\tab\tab\tab <a class="nav-link scroll" href="#gallery">Gallery</a>\par
+\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\par
+\tab\tab\tab\tab\tab\tab <li class="nav-item">\par
+\tab\tab\tab\tab\tab\tab\tab <button  class="nav-link scroll" style="background:transparent" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>\par
+\tab\tab\tab\tab\tab\tab\tab <div id="id01" class="modal">\par
+  \par
+  <form class="modal-content animate" action="../miniproject/loginaction.php" method="POST">\par
+    <div class="imgcontainer">\par
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>\par
+      \tab <img src="../miniproject/images/log1.jpg" alt="Avatar" class="avatar">\par
+    </div>\par
+\ul\b Login \ulnone\b0\par
+    <div class="container">\par
+\tab <br><br><br><br>\par
+      <label for="uname" ><b>Email:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+      <input type="text" placeholder="abc@example.com" name="uname" required>\par
+<br>\par
+      <label for="psw"><b>Password:</b></label>\par
+      <input type="password" placeholder="" name="upassword" required>\par
+        <br>\par
+      <button   type="submit">LOG IN</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" style="background-color:red">CANCEL</button>\par
+\tab   <br><br>\par
+\tab  \par
+\tab    <span class="psw">Forgot <a href="#">password?</a></span>\par
+\tab   \par
+    <!--  <label>\par
+        <input type="checkbox" checked="checked" name="remember"> Remember me\par
+      </label>\par
+   \par
+\tab    l</button>\par
+ \par
+\par
+      <span class="psw">Forgot <a href="#">password?</a></span>\par
+\tab   <p class="text-center text-muted">Not registered yet?</p>\par
+                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>\par
+-->\par
+    </div>\par
+  </form>\par
+  \tab\tab\tab\tab\tab\tab <li class="nav-item">\par
+\tab\tab\tab\tab\tab\tab\tab <button  class="nav-link scroll" style="background:transparent" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>\par
+ <div id="id02" class="modal">\par
+\ul\b   Register\par
+\ulnone\b0   <form class="modal-content animate" action="../miniproject/register_action.php" method="POST" oninput="result.value=!!c_password.value&&(c_password.value==confirm_password.value)?'Match!':' Password Mismatch'">\par
+    <div class="imgcontainer">\par
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close">&times;</span>\par
+      \tab <img src="../miniproject/images/log1.jpg" alt="Avatar" class="avatar">\par
+    </div>\par
+\par
+    <div class="container">\par
+\tab <br><br><br><br>\par
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="uname" ><b>Name:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+\tab   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+      <input type="text" placeholder="" name="c_name" required>\par
+<br>\par
+ <label for="umail" ><b>Email:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+      <input type="email" placeholder="" name="c_email" pattern="^\\S\{8,\}$" required>\par
+<br>\par
+      <label for="psw"><b>Password:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+      <input type="password" placeholder="" name="c_password"  pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).\{6,\}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" onchange=" if(this.checkValidity()) form.confirm_password.pattern = this.value;" required>\par
+        <br>\par
+\tab\tab <br>\par
+      <label for="psw"><b>Confirm Password:</b></label> \par
+      <input type="password" placeholder="" name="confirm_password" pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).\{6,\}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password Mismatch' : '');"    required>\par
+        <br>\par
+      <button   type="submit">REGISTER</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\par
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" style="background-color:red">CANCEL</button>\par
+\tab </div> \par
+ </div>\par
+\tab </form>\par
+<li class="nav-item dropdown">\par
+\tab\tab\tab\tab\tab\tab\tab <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"\par
+\tab\tab\tab\tab\tab\tab\tab     aria-expanded="false">\par
+\tab\tab\tab\tab\tab\tab\tab\tab More\par
+\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab <div class="dropdown-menu" aria-labelledby="navbarDropdown">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a class="dropdown-item text-center scroll" href="#services">Services</a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a class="dropdown-item text-center scroll" href="#pricing">Our Products</a>\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab </li>\par
+\par
+\par
+<script>\par
+// Get the modal\par
+var modal = document.getElementById('id01');\par
+\par
+// When the user clicks anywhere outside of the modal, close it\par
+window.onclick = function(event) \{\par
+    if (event.target == modal) \{\par
+        modal.style.display = "none";\par
+    \}\par
+\}\par
+</script>\par
+\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab </ul>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </nav>\par
+\tab\tab </header>\par
+\tab\tab <!-- //header -->\par
+\tab\tab <!-- banner-text -->\par
+\tab\tab <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">\par
+\tab\tab\tab <div class="carousel-inner text-right">\par
+\tab\tab\tab\tab <div class="carousel-item b1 active">\par
+\tab\tab\tab\tab\tab <div class="container banner-w3layouts-info">\par
+\tab\tab\tab\tab\tab\tab <h3>Revitalizing beauty</h3>\par
+\tab\tab\tab\tab\tab\tab <p class="mt-lg-4 mt-md-3 mt-2 py-2 px-3">Revitalizing beauty for your skin</p>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="carousel-item b2">\par
+\tab\tab\tab\tab\tab <div class="container banner-w3layouts-info">\par
+\tab\tab\tab\tab\tab\tab <h3>Relax & Refresh</h3>\par
+\tab\tab\tab\tab\tab\tab <p class="mt-lg-4 mt-md-3 mt-2 py-2 px-3">Beauty tips for a fresh start</p>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="carousel-item b3">\par
+\tab\tab\tab\tab\tab <div class="container banner-w3layouts-info">\par
+\tab\tab\tab\tab\tab\tab <h3>Real Beauty</h3>\par
+\tab\tab\tab\tab\tab\tab <p class="mt-lg-4 mt-md-3 mt-2 py-2 px-3">Naturally Effective Health Solutions</p>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab\tab <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">\par
+\tab\tab\tab\tab <span class="carousel-control-prev-icon" aria-hidden="true"></span>\par
+\tab\tab\tab\tab <span class="sr-only">Previous</span>\par
+\tab\tab\tab </a>\par
+\tab\tab\tab <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">\par
+\tab\tab\tab\tab <span class="carousel-control-next-icon" aria-hidden="true"></span>\par
+\tab\tab\tab\tab <span class="sr-only">Next</span>\par
+\tab\tab\tab </a>\par
+\tab\tab </div>\par
+\tab </div>\par
+\tab <!-- //banner -->\par
+\tab <!--about-->\par
+\tab <section class="banner-w3-agileits-btm-right py-5" id="about">\par
+\tab\tab <div class="container py-xl-5 py-sm-3">\par
+\tab\tab\tab <h5 class="main-w3l-title mb-sm-4 mb-3">About Us</h5>\par
+\tab\tab\tab <div class="row">\par
+\tab\tab\tab\tab <div class="col-lg-6 about-left">\par
+\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Naturally Effective Health Solutions</h3>\par
+\tab\tab\tab\tab\tab <p class="paragraph-agileinfo">There are loads of anti-aging supplements out there that promise to make you look younger.\par
+\tab\tab\tab\tab\tab We dove into research and talked to top dermatologists to find the few worth popping. </p>\par
+\par
+\par
+\tab\tab\tab\tab\tab <!-- Clients -->\par
+\tab\tab\tab\tab\tab <div class="slider mt-md-4 mt3 mb-3">\par
+\tab\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Some of Our Clients Saying About Us</h3>\par
+\tab\tab\tab\tab\tab\tab <div class="flexslider">\par
+\tab\tab\tab\tab\tab\tab\tab <ul class="slides">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <div class="client-grids">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <img src="images/c11.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <h4 class="mt-3 mb-1">Annie Robin</h4>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo"> The results are superb, loved it .Best services ever</p>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <div class="client-grids">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <img src="images/c12.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <h4 class="mt-3 mb-1">Lausy Michael</h4>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo">The team is really friendly and good at every services.</p>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <div class="client-grids">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <img src="images/c13.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <h4 class="mt-3 mb-1">Riya Doe</h4>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo"> They are trustable and give clear suggestions.</p>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab </ul>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <!--// Clients -->\par
+\tab\tab\tab\tab <div class="col-lg-6 mt-lg-0 mt-5">\par
+\tab\tab\tab\tab\tab <div class="ab1 mr-auto"></div>\par
+\tab\tab\tab\tab\tab <div class="ab2 my-4 ml-auto"></div>\par
+\tab\tab\tab\tab\tab <div class="ab3 mr-auto"></div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </section>\par
+\tab <!--//about-->\par
+\tab <!--services-->\par
+\tab <section class="services-section py-5" id="services">\par
+\tab\tab <div class="container pt-xl-5 pt-sm-3">\par
+\tab\tab\tab <h5 class="main-w3l-title mb-sm-4 mb-3">Services & Prices</h5>\par
+\tab\tab\tab <div class="srategy-text mb-5">\par
+\tab\tab\tab\tab <p class="paragraph-agileinfo">Spa Services & Pricing subject to change.\par
+\tab\tab\tab\tab All the services are done by and under the supervision of qualified and certified professionals. \par
+\tab\tab\tab\tab </p>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab\tab <div class="container-fluid pb-xl-5 pb-sm-3">\par
+\tab\tab\tab <div class="services-main row d-lg-flex justify-content-around">\par
+\tab\tab\tab\tab <div class="col-xl-3 col-md-6 col-12 service-grids-agileits-w3layouts">\par
+\tab\tab\tab\tab\tab <div class="services-w3-agile-info p-4">\par
+\tab\tab\tab\tab\tab\tab <div class="bb1 mb-3">\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/bb1.jpg" class="img-fluid mb-3" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Medi-SPA & Massage</h3>\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo text-white">we offer different massage therapies to improve your health,relieve pain,increase relaxation and reduce stress. \par
+\tab\tab\tab\tab\tab\tab </p>\par
+\tab\tab\tab\tab\tab\tab <h6 class="mt-2">\par
+\tab\tab\tab\tab\tab\tab\tab <span class="mr-2">&#8377;</span>1200</h6>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-xl-3 col-md-6 col-12 service-grids-agileits-w3layouts mt-md-0 mt-4">\par
+\tab\tab\tab\tab\tab <div class="services-w3-agile-info p-4">\par
+\tab\tab\tab\tab\tab\tab <div class="bb2 mb-3">\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/bb2.jpg" class="img-fluid mb-3" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Hair Styling</h3>\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo text-white">We offer a wide array of services such as styling, cutting, trimming, and coloring hair. \par
+\tab\tab\tab\tab\tab\tab Price varies depending on the package you choose.</p>\par
+\tab\tab\tab\tab\tab\tab <h6 class="mt-2">\par
+\tab\tab\tab\tab\tab\tab\tab <span class="mr-2">&#8377;</span>100</h6>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-xl-3 col-md-6 col-12 service-grids-agileits-w3layouts mt-xl-0 mt-4">\par
+\tab\tab\tab\tab\tab <div class="services-w3-agile-info p-4">\par
+\tab\tab\tab\tab\tab\tab <div class="bb3 mb-3">\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/bb3.jpg" class="img-fluid mb-3" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Facial Care</h3>\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo text-white">Shop skin care sets VCare. \par
+\tab\tab\tab\tab\tab\tab These value sets and mini-sets are great for travel and fit perfectly in your purse or bag for on-the-go skin perfection.</p>\par
+\tab\tab\tab\tab\tab\tab <h6 class="mt-2">\par
+\tab\tab\tab\tab\tab\tab\tab <span class="mr-2">&#8377;</span>500</h6>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-xl-3 col-md-6 col-12 service-grids-agileits-w3layouts mt-xl-0 mt-4">\par
+\tab\tab\tab\tab\tab <div class="services-w3-agile-info p-4">\par
+\tab\tab\tab\tab\tab\tab <div class="bb4 mb-3">\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/bb4.jpg" class="img-fluid mb-3" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Make Up</h3>\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo text-white">Safe ingredients are used on sensitive skin,acne-prone skin,injured skin, perioral dermatitis,and rosacea. \par
+\tab\tab\tab\tab\tab\tab </p>\par
+\tab\tab\tab\tab\tab\tab <h6 class="mt-2">\par
+\tab\tab\tab\tab\tab\tab\tab <span class="mr-2">&#8377;</span>5000</h6>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </section>\par
+\tab <!--//services-->\par
+\par
+\tab <!-- Team -->\par
+\tab <section class="team-section py-5" id="team">\par
+\tab\tab <div class="container py-xl-5 py-sm-3">\par
+\tab\tab\tab <h5 class="main-w3l-title mb-sm-4 mb-3">About Our Team</h5>\par
+\tab\tab\tab <div class="row">\par
+\tab\tab\tab\tab <div class="col-lg-6 team-left">\par
+\tab\tab\tab\tab\tab <div class="row">\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo">Team momentum and excitement are infectious. \par
+\tab\tab\tab\tab\tab\tab Teamwork pulls people together in the most positive and inspiring way.</p>\par
+\tab\tab\tab\tab\tab\tab <div class="col-sm-6 col-11 mx-auto grid_info_w3ls mt-4">\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/c1.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab\tab <div class="team_info p-3">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <h5 class="text-white">Pearly Chris</h5>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <span class="mt-1 mb-2">Makeup Specialist</span>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <!--<ul class="social_list1">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="facebook1 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-facebook-f"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="twitter2 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-twitter"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="dribble3 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-dribbble"></i>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </ul>-->\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <div class="col-sm-6 col-11 mx-auto grid_info_w3ls mt-4">\par
+\tab\tab\tab\tab\tab\tab\tab <div class="team_info p-3">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <h5 class="text-white">Andrue Hume</h5>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <span class="mt-1 mb-2">Hair Stylist</span>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <!--<ul class="social_list1">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="facebook1 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-facebook-f"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="twitter2 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-twitter"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="dribble3 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-dribbble"></i>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </ul>-->\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/c2.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-lg-6 team-right">\par
+\tab\tab\tab\tab\tab <div class="row">\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo order-lg-2 mt-lg-3 mt-4">\par
+\tab\tab\tab\tab\tab\tab  The salon/spa\rquote s team spirit is strong enough,\par
+\tab\tab\tab\tab\tab\tab even the self-proclaimed diehard loners and change resisters will find themselves subtly seeking a way to align with our team.</p>\par
+\tab\tab\tab\tab\tab\tab <div class="col-sm-6 col-11 mx-auto grid_info_w3ls mt-lg-0 mt-4">\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/c4.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab\tab <div class="team_info p-3">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <h5 class="text-white">Mariah Colin</h5>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <span class="mt-1 mb-2">Product Analyst</span>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <!--<ul class="social_list1">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="facebook1 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-facebook-f"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="twitter2 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-twitter"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="dribble3 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-dribbble"></i>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </ul>-->\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <div class="col-sm-6 col-11 mx-auto grid_info_w3ls mt-lg-0 mt-4">\par
+\tab\tab\tab\tab\tab\tab\tab <div class="team_info p-3">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <h5 class="text-white">Rose Roshan</h5>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <span class="mt-1 mb-2"> Pedicure and Massage Instructor</span>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <!--<ul class="social_list1">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="facebook1 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-facebook-f"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="twitter2 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-twitter"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="dribble3 text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-dribbble"></i>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </ul>-->\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab <img src="images/c3.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </section>\par
+\tab <!--// Team -->\par
+\par
+\tab <!--subscribe-->\par
+\tab <section class="subscribe-section py-5">\par
+\tab\tab <div class="container py-xl-5 py-sm-3">\par
+\tab\tab\tab <div class="subscribe-bg p-sm-4 p-3">\par
+\tab\tab\tab\tab <h5 class="main-w3l-title mb-sm-4 mb-3 text-white">\par
+\tab\tab\tab\tab\tab <span>30% OFF</span> for All Massages</h5>\par
+\tab\tab\tab\tab <p class="paragraph-agileinfo text-white mb-3">Subscribe to our newsletter to receive updates from us.</p>\par
+\tab\tab\tab\tab <form action="#" method="post" class="d-sm-flex">\par
+\tab\tab\tab\tab\tab <div class="form-group">\par
+\tab\tab\tab\tab\tab\tab <input type="email" class="form-control" placeholder="name@example.com" required="">\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab <button type="submit" class="btn btn-primary">Subscribe</button>\par
+\tab\tab\tab\tab </form>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </section>\par
+\tab <!--//subscribe-->\par
+\tab <!-- pricing -->\par
+\tab <section class="pricing-section py-5" id="pricing">\par
+\tab\tab <div class="container py-xl-5 py-sm-3">\par
+\tab\tab\tab <h5 class="main-w3l-title mb-sm-4 mb-3">Our Price Table</h5>\par
+\tab\tab\tab <div class="card-deck text-center">\par
+\tab\tab\tab\tab <div class="card box-shadow col-lg-4">\par
+\tab\tab\tab\tab\tab <div class="card-header">\par
+\tab\tab\tab\tab\tab\tab <h4 class="py-md-4 py-3">Basic</h4>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab <div class="card-body">\par
+\tab\tab\tab\tab\tab\tab <h5 class="card-title pricing-w3-agileits-title">\par
+\tab\tab\tab\tab\tab\tab\tab <span class="align-top">&#8377;</span>250\par
+\tab\tab\tab\tab\tab\tab\tab <small class="text-muted">/ month</small>\par
+\tab\tab\tab\tab\tab\tab </h5>\par
+\tab\tab\tab\tab\tab\tab <ul class="list-unstyled mt-3 mb-4">\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Relaxing Massage</li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Body Polish</li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Signature Facial</li>\par
+\tab\tab\tab\tab\tab\tab </ul>\par
+\tab\tab\tab\tab\tab\tab <a href="#contact" class="btn btn-block btn-outline-primary scroll py-2">Contact</a>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="card box-shadow col-lg-4 my-lg-0 my-3">\par
+\tab\tab\tab\tab\tab <div class="card-header">\par
+\tab\tab\tab\tab\tab\tab <h4 class="py-md-4 py-3">Professional</h4>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab <div class="card-body">\par
+\tab\tab\tab\tab\tab\tab <h5 class="card-title pricing-w3-agileits-title">\par
+\tab\tab\tab\tab\tab\tab\tab <span class="align-top">&#8377;</span>300\par
+\tab\tab\tab\tab\tab\tab\tab <small class="text-muted">/ month</small>\par
+\tab\tab\tab\tab\tab\tab </h5>\par
+\tab\tab\tab\tab\tab\tab <ul class="list-unstyled mt-3 mb-4">\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Body Polish</li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Signature Facial</li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Sensorial 50-minute Massage</li>\par
+\tab\tab\tab\tab\tab\tab </ul>\par
+\tab\tab\tab\tab\tab\tab <a href="#contact" class="btn btn-block btn-outline-primary scroll py-2">Contact</a>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="card box-shadow col-lg-4">\par
+\tab\tab\tab\tab\tab <div class="card-header">\par
+\tab\tab\tab\tab\tab\tab <h4 class="py-md-4 py-3">Exclusive</h4>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab <div class="card-body">\par
+\tab\tab\tab\tab\tab\tab <h5 class="card-title pricing-w3-agileits-title">\par
+\tab\tab\tab\tab\tab\tab\tab <span class="align-top">&#8377;</span>450\par
+\tab\tab\tab\tab\tab\tab\tab <small class="text-muted">/ month</small>\par
+\tab\tab\tab\tab\tab\tab </h5>\par
+\tab\tab\tab\tab\tab\tab <ul class="list-unstyled mt-3 mb-4">\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Imperiale Relaxing Massage</li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Intensive Facial Luxury</li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="py-2 border-bottom">Manicure & Pedicure</li>\par
+\tab\tab\tab\tab\tab\tab </ul>\par
+\tab\tab\tab\tab\tab\tab <a href="#contact" class="btn btn-block btn-outline-primary scroll py-2">Contact</a>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\par
+\tab\tab </div>\par
+\tab </section>\par
+\tab <!-- //pricing -->\par
+\tab <!-- gallery -->\par
+\tab <section class="gallery" id="gallery">\par
+\tab\tab <div class="container">\par
+\tab\tab\tab <h5 class="main-w3l-title mb-sm-4 mb-3">Gallery</h5>\par
+\tab\tab </div>\par
+\tab\tab <div class="container-fluid">\par
+\tab\tab\tab <div class="agileinfo-gallery row">\par
+\tab\tab\tab\tab <div class="col-lg-3 col-6 w3-agileits-gallery-grids mb-lg-0 mb-4">\par
+\tab\tab\tab\tab\tab <a href="images/g1.jpg" data-lightbox="example-set" data-title="wrist mehndi for bride.">\par
+\tab\tab\tab\tab\tab\tab <img src="images/g1.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab <div class="agile-b-wrapper">\par
+\tab\tab\tab\tab\tab\tab\tab <h5>VCare</h5>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-lg-3 col-6 w3-agileits-gallery-grids mb-lg-0 mb-4">\par
+\tab\tab\tab\tab\tab <a href="images/g2.jpg" data-lightbox="example-set" data-title="Swedish massage.Best for: Relaxation, stress relief.\par
+Deep tissue massage..">\par
+\tab\tab\tab\tab\tab\tab <img src="images/g2.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab <div class="agile-b-wrapper">\par
+\tab\tab\tab\tab\tab\tab\tab <h5>VCare</h5>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-lg-6 w3-agileits-gallery-grids gallery-two">\par
+\tab\tab\tab\tab\tab <a href="images/g3.jpg" data-lightbox="example-set" data-title="Bridal Makeup Looks, Indian Bridal Makeup, Indian Bridal Wear, \par
+\tab\tab\tab\tab\tab Wedding Makeup, Kerala Bride, Hindu Bride, South Indian Bride, Saree Wedding..">"\par
+\tab\tab\tab\tab\tab\tab <img src="images/g3.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab <div class="agile-b-wrapper">\par
+\tab\tab\tab\tab\tab\tab\tab <h5>VCare</h5>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-lg-6 w3-agileits-gallery-grids agileits-gallery-grids gallery-two mt-4">\par
+\tab\tab\tab\tab\tab <a href="images/g4.jpg" data-lightbox="example-set" data-title="A pedicure is a cosmetic treatment of the feet and toenails, analogous to a manicure. \par
+\tab\tab\tab\tab\tab Pedicures are done for cosmetic, therapeutic purposes.">"\par
+\tab\tab\tab\tab\tab\tab <img src="images/g4.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab <div class="agile-b-wrapper">\par
+\tab\tab\tab\tab\tab\tab\tab <h5>VCare</h5>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-lg-3 col-6 w3-agileits-gallery-grids agileits-gallery-grids mt-4">\par
+\tab\tab\tab\tab\tab <a href="images/g5.jpg" data-lightbox="example-set" data-title="Looking for a perfect Bridal Makeup? At VCare check out our best bridal makeup tips,\par
+\tab\tab\tab\tab\tab ideas that will make you look flawless in all your wedding pictures.">\par
+\tab\tab\tab\tab\tab\tab <img src="images/g5.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab <div class="agile-b-wrapper">\par
+\tab\tab\tab\tab\tab\tab\tab <h5>VCare</h5>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-lg-3 col-6 w3-agileits-gallery-grids agileits-gallery-grids mt-4">\par
+\tab\tab\tab\tab\tab <a href="images/g6.jpg" data-lightbox="example-set" data-title=" Your nails aren't going to change the world, but the woman who wears them will.">\par
+\tab\tab\tab\tab\tab\tab <img src="images/g6.jpg" class="img-fluid" alt="Responsive image">\par
+\tab\tab\tab\tab\tab\tab <div class="agile-b-wrapper">\par
+\tab\tab\tab\tab\tab\tab\tab <h5>VCare</h5>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </section>\par
+\tab <!--// gallery -->\par
+\tab <!-- contact -->\par
+\tab <section class="contact-section py-5" id="contact">\par
+\tab\tab <div class="container py-xl-5 py-sm-3">\par
+\tab\tab\tab <h5 class="main-w3l-title mb-sm-4 mb-3">Contact Us</h5>\par
+\tab\tab\tab <div class="row">\par
+\tab\tab\tab\tab <div class="col-lg-8 wthree_contact_left">\par
+\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Send us an Email</h3>\par
+\tab\tab\tab\tab\tab <form action="#" method="post">\par
+\tab\tab\tab\tab\tab\tab <div class="form-row">\par
+\tab\tab\tab\tab\tab\tab\tab <div class="form-group col-md-6">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <input type="text" class="form-control" placeholder="Name" required="">\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab <div class="form-group col-md-6">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <input type="text" class="form-control" placeholder="phone" required="">\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab <div class="form-group col-md-6">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <input type="email" class="form-control" placeholder="Email" required="">\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab\tab <div class="form-group col-md-6">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <input type="text" class="form-control" placeholder="Subject" required="">\par
+\tab\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <div class="form-group">\par
+\tab\tab\tab\tab\tab\tab\tab <textarea id="textarea" placeholder="Message..." required=""></textarea>\par
+\tab\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab\tab <button type="submit" class="btn btn-primary py-sm-3 py-2 px-5">Submit</button>\par
+\tab\tab\tab\tab\tab </form>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab <div class="col-lg-4 wthree_contact_right mt-lg-0 mt-sm-5 mt-4">\par
+\tab\tab\tab\tab\tab <h3 class="subheading-wthree mb-md-4 mb-3">Get In Touch</h3>\par
+\tab\tab\tab\tab\tab <address>\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo mb-md-4 mb-3">\par
+\tab\tab\tab\tab\tab\tab\tab <i class="fas fa-map-marker-alt mr-3"></i>Vcare beauty spa,thazhe chovva, kannur, kerala, India</p>\par
+\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo mb-md-4 mb-3">\par
+\tab\tab\tab\tab\tab\tab\tab <i class="fas fa-phone mr-3"></i> +91-8281177576</p>\par
+\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo mb-md-4 mb-3">\par
+\tab\tab\tab\tab\tab\tab\tab <i class="fas fa-fax mr-3"></i> 0460-229154</p>\par
+\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo">\par
+\tab\tab\tab\tab\tab\tab\tab <i class="far fa-envelope mr-3"></i>\par
+\tab\tab\tab\tab\tab\tab\tab <a href="mailto:info@example.com">vcare@gmail.com</a>\par
+\tab\tab\tab\tab\tab\tab </p>\par
+\tab\tab\tab\tab\tab </address>\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </section>\par
+\par
+\tab <!-- contact -->\par
+\par
+\tab <!-- Footer -->\par
+\tab <div class="map-section">\par
+\tab\tab <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.865700051202!2d-73.81905638452312!3d40.76497847932613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c260223d2b354d%3A0x92c41dffab8d9103!2sNew+York+Spa+%26+Sauna!5e0!3m2!1sen!2sin!4v1522310918224"></iframe>\par
+\tab </div>\par
+\tab <footer class="footer-section">\par
+\tab\tab <div class="container">\par
+\tab\tab\tab <div class="footer-right py-5">\par
+\tab\tab\tab\tab <div class="row">\par
+\tab\tab\tab\tab\tab <div class="col-lg-6 col-md-6 footer-grids">\par
+\tab\tab\tab\tab\tab\tab <h2>About Us</h2>\par
+\tab\tab\tab\tab\tab\tab <p class="paragraph-agileinfo">Aliquam sit amet condimentum eros. Pellentesque placerat justo at maximus pretium. Ut dignissim auctor neque, at congue\par
+\tab\tab\tab\tab\tab\tab\tab neque vulputate vel.</p>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab <div class="col-lg-3 footer-grids mt-lg-0 mt-4">\par
+\tab\tab\tab\tab\tab\tab <h3>Usefull Links</h3>\par
+\tab\tab\tab\tab\tab\tab <ul class="w3agile_footer_grid_list">\par
+\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="index.html">Home</a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="#about" class="scroll">About</a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="#gallery" class="scroll">Gallery</a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="#services" class="scroll">Services</a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab <li>\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="#contact" class="scroll">Contact</a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab </ul>\par
+\tab\tab\tab\tab\tab </div>\par
+\tab\tab\tab\tab\tab <!--<div class="col-lg-3 footer-grids mt-lg-0 mt-4">\par
+\tab\tab\tab\tab\tab\tab <h3>Social Media</h3>\par
+\tab\tab\tab\tab\tab\tab <ul class="social_list1">\par
+\tab\tab\tab\tab\tab\tab\tab <li class="text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="facebook1">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-facebook-f"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="text-center mx-sm-3 mx-2">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="twitter2">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-twitter"></i>\par
+\par
+\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab\tab <li class="text-center">\par
+\tab\tab\tab\tab\tab\tab\tab\tab <a href="#" class="dribble3">\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab <i class="fab fa-dribbble"></i>\par
+\tab\tab\tab\tab\tab\tab\tab\tab </a>\par
+\tab\tab\tab\tab\tab\tab\tab </li>\par
+\tab\tab\tab\tab\tab\tab </ul>\par
+\tab\tab\tab\tab\tab </div>-->\par
+\tab\tab\tab\tab </div>\par
+\tab\tab\tab </div>\par
+\tab\tab </div>\par
+\tab </footer>\par
+\tab <!-- //Footer -->\par
+\tab <!-- copyright -->\par
+\tab <!--<div class="copyright-w3layouts">\par
+\tab\tab <div class="container">\par
+\tab\tab\tab <p class="py-xl-4 py-3">\'a9 2018 Gleam . All Rights Reserved | Design by\par
+\tab\tab\tab\tab <a href="http://w3layouts.com/"> W3layouts </a>\par
+\tab\tab\tab </p>\par
+\tab\tab </div>\par
+\tab </div>-->\par
+\tab <!-- //copyright -->\par
+\tab <!-- Required common Js -->\par
+\tab <script src='js/jquery-2.2.3.min.js'></script>\par
+\tab <!-- //Required common Js -->\par
+\tab <!-- flexSlider -->\par
+\tab <script defer src="js/jquery.flexslider.js"></script>\par
+\tab <script>\par
+\tab\tab $(window).load(function () \{\par
+\tab\tab\tab $('.flexslider').flexslider(\{\par
+\tab\tab\tab\tab animation: "slide",\par
+\tab\tab\tab\tab start: function (slider) \{\par
+\tab\tab\tab\tab\tab $('body').removeClass('loading');\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\});\par
+\tab\tab\});\par
+\tab </script>\par
+\par
+\tab <!-- //flexSlider -->\par
+\par
+\tab <!--light-box-files -->\par
+\tab <script src="js/lightbox-plus-jquery.min.js">\par
+\tab </script>\par
+\tab <!--//light-box-files -->\par
+\par
+\par
+\tab <!-- start-smoth-scrolling -->\par
+\tab <script src="js/move-top.js"></script>\par
+\tab <script src="js/easing.js"></script>\par
+\tab <script>\par
+\tab\tab jQuery(document).ready(function ($) \{\par
+\tab\tab\tab $(".scroll").click(function (event) \{\par
+\tab\tab\tab\tab event.preventDefault();\par
+\tab\tab\tab\tab $('html,body').animate(\{\par
+\tab\tab\tab\tab\tab scrollTop: $(this.hash).offset().top\par
+\tab\tab\tab\tab\}, 1000);\par
+\tab\tab\tab\});\par
+\tab\tab\});\par
+\tab </script>\par
+\tab <!-- start-smoth-scrolling -->\par
+\tab <!-- here stars scrolling icon -->\par
+\tab <script>\par
+\tab\tab $(document).ready(function () \{\par
+\tab\tab\tab /*\par
+\tab\tab\tab\tab var defaults = \{\par
+\tab\tab\tab\tab containerID: 'toTop', // fading element id\par
+\tab\tab\tab\tab containerHoverID: 'toTopHover', // fading element hover id\par
+\tab\tab\tab\tab scrollSpeed: 1200,\par
+\tab\tab\tab\tab easingType: 'linear'\par
+\tab\tab\tab\tab\};\par
+\tab\tab\tab */\par
+\par
+\tab\tab\tab $().UItoTop(\{\par
+\tab\tab\tab\tab easingType: 'easeOutQuart'\par
+\tab\tab\tab\});\par
+\par
+\tab\tab\});\par
+\tab </script>\par
+\tab <!-- //here ends scrolling icon -->\par
+\tab <!-- Js for bootstrap working-->\par
+\tab <script src="js/bootstrap.min.js"></script>\par
+\tab <!-- //Js for bootstrap working -->\par
+</body>\par
+\par
+</html>\par
+\par
+\par
+\par
+\ul Login Action.php\ulnone\par
+<?php\par
+session_start();\par
+include("../miniproject/header.php");\par
+$u_name=$_POST['uname'];\par
+$u_pass=$_POST['upassword'];\par
+$sql="select * from tbl_login where u_id='$u_name'";\par
+$sql1="select * from tbl_u_detail where u_id='$u_name'";\par
+$result=mysql_query($sql,$conn);\par
+$rowcount=mysql_num_rows($result);\par
+$result1=mysql_query($sql1,$conn);\par
+$rowcount1=mysql_num_rows($result1);\par
+if($rowcount!=0 && $rowcount1!=0) \par
+\{\par
+\tab while($row=mysql_fetch_array($result))\par
+\tab\{\par
+\tab\tab while($row1=mysql_fetch_array($result1))\par
+\tab\{\par
+\tab\tab $dbu_name=$row['u_id'];\par
+\tab\tab $dbu_pass=$row['u_password'];\par
+\tab\tab $dbu_type=$row['u_type'];\par
+\tab\tab $block=$row['u_status'];\par
+\tab\tab  // $su_name=$row['u_name'];\par
+\tab\tab  // $_SESSION['u_id']=$dbu_name;\par
+\tab\tab // $_SESSION['u_pass']=$dbu_pass;\par
+\tab\tab // $_SESSION['u_name'] = $row['u_name'];\par
+\tab\tab $_SESSION['u_id'] = $row['u_id'];\par
+\tab\tab      $_SESSION['u_pass']=$dbu_pass;\par
+\tab\tab\tab  $_SESSION['u_name'] = $row1['name'];\par
+\tab\tab\tab   \par
+\tab\tab if($dbu_name==$u_name && $dbu_pass==$u_pass && $dbu_type==0)\par
+\tab\tab\{\par
+\tab\tab\tab\par
+\tab\tab $_SESSION['u_id']=$row['u_id'];\par
+\tab\tab $_SESSION['u_pass']=$row['u_password'];\par
+\tab\tab\par
+\tab\tab $_SESSION['u_type']="Admin";\par
+\tab\tab header("location:../miniproject/admin_home.php");\par
+\tab\tab\}\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab else if($dbu_name==$u_name && $dbu_pass==$u_pass && $dbu_type==2)\par
+\tab\tab\tab\{\par
+\tab\tab\tab\par
+\tab\tab\tab\tab if($block==1)\par
+\tab\tab\tab\tab\{\par
+\tab\tab\tab\tab   $_SESSION['u_type']="User";\par
+\tab\tab\tab\tab  \par
+\tab\tab\tab\tab header("location:../miniproject/reguser_home.php");\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab else if($block==0)\par
+\tab\tab\tab\{\par
+\tab\tab\tab header("location:../miniproject/index.php?error=You are blocked by ADMIN !");\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\tab else\par
+\tab\tab\{\par
+\tab\tab\tab header("location:../miniproject/index.php?error=Wrong password!");\par
+\tab\tab\}\par
+\tab\}\}\par
+\}\par
+else\par
+\{\par
+\tab header("location:../miniproject/index.php?error=Wrong username!!");\par
+\tab\par
+\}\par
+?>\par
+}
+ 
